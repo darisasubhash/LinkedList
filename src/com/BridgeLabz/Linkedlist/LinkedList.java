@@ -132,7 +132,7 @@ public class LinkedList <T>{
     public void forwardDisplay(){
         Node<T> temp=head;
         while(temp!=null){
-            System.out.print(temp.getData()+",");
+            System.out.print(temp.getData()+" ");
             temp=temp.getNext();
         }
 //        System.out.print("null");
