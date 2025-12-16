@@ -1,4 +1,5 @@
 package com.BridgeLabz.Linkedlist;
 
-public class Queue {
+public class Queue<T> {
+
 }

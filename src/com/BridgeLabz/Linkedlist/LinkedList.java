@@ -156,5 +156,54 @@ public class LinkedList <T>{
         return size;
     }
 
+    public T getFirst(){
+        if(head==null){
+            return null;
+        }
+        return head.getData();
+    }
+    public T getLast(){
+        if(tail==null){
+            return null;
+        }
+        return  tail.getData();
+    }
 
+    public boolean isPresent(T data){
+        Node<T> temp=head;
+        while(temp!=null){
+            if(temp.getData()==data){
+                return true;
+            }
+        }
+        return false;
+    }
+    public void removeByData(T data) {
+        Node<T> temp = head;
+        while (temp != null) {
+            if (temp.getData().equals(data)) {
+
+                if (temp == head && temp == tail) {
+                    head = null;
+                    tail = null;
+                }
+                else if (temp == head) {
+                    head = head.getNext();
+                }
+                else if (temp == tail) {
+                    tail = tail.getPre();
+                }
+                else {
+                    temp.getPre().setNext(temp.getNext());
+                    temp.getNext().setPre(temp.getPre());
+                }
+
+                size--;
+                return;
+            }
+            temp=temp.getNext();
+
+        }
+
+    }
 }
